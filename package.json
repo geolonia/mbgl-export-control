@@ -1,0 +1,19 @@
+{
+  "name": "mapbox-gl-download",
+  "version": "0.1.0",
+  "description": "",
+  "main": "dist/mapbox-gl-download.js",
+  "scripts": {
+    "build": "parcel build src/mapbox-gl-download.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Takayuki Miyauchi",
+  "license": "MIT",
+  "devDependencies": {
+    "parcel": "^1.9.7"
+  },
+  "dependencies": {
+    "canvas-toBlob": "^1.0.0",
+    "file-saver": "^1.3.8"
+  }
+}
