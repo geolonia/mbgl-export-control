@@ -3,7 +3,7 @@
 require('canvas-toBlob')
 const FileSaver = require('file-saver')
 
-const download = function() {}
+const Export = function() {}
 
 const loading_icon = `
 <svg style="width: 100%; height: 100%;" width="45" height="45" viewBox="0 0 45 45" xmlns="http://www.w3.org/2000/svg" stroke="#fff">
@@ -103,7 +103,7 @@ const loading = () => {
   return container;
 }
 
-download.prototype.onAdd = (map) => {
+Export.prototype.onAdd = (map) => {
   this.container = document.createElement('div')
   this.container.className = 'mapboxgl-ctrl mapboxgl-ctrl-group'
 
@@ -172,8 +172,8 @@ download.prototype.onAdd = (map) => {
   return this.container;
 }
 
-download.prototype.onRemove = () => {
+Export.prototype.onRemove = () => {
   this.container.parentNode.removeChild(this.container)
 }
 
-mapboxgl.download = download
+mapboxgl.Export = Export
