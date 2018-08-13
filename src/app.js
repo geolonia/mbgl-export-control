@@ -3,7 +3,7 @@
 require('canvas-toBlob')
 const FileSaver = require('file-saver')
 
-const Export = function() {}
+const ExportControl = function() {}
 
 const loading_icon = `
 <svg style="width: 100%; height: 100%;" width="45" height="45" viewBox="0 0 45 45" xmlns="http://www.w3.org/2000/svg" stroke="#fff">
@@ -62,7 +62,7 @@ const download_icon = `
 </svg>
 `
 
-const loading = () => {
+ExportControl.prototype.loading = () => {
   const container = document.createElement('div')
   document.body.appendChild(container)
 
@@ -103,7 +103,7 @@ const loading = () => {
   return container;
 }
 
-Export.prototype.onAdd = (map) => {
+ExportControl.prototype.onAdd = (map) => {
   this.container = document.createElement('div')
   this.container.className = 'mapboxgl-ctrl mapboxgl-ctrl-group'
 
@@ -121,7 +121,7 @@ Export.prototype.onAdd = (map) => {
       get: function() {return 300 / 96}
     });
 
-    const _loading = loading()
+    const _loading = this.loading()
 
     const _container = document.createElement('div')
     document.body.appendChild(_container)
@@ -172,8 +172,12 @@ Export.prototype.onAdd = (map) => {
   return this.container;
 }
 
-Export.prototype.onRemove = () => {
+ExportControl.prototype.onRemove = () => {
   this.container.parentNode.removeChild(this.container)
 }
 
-mapboxgl.Export = Export
+if (typeof module !== 'undefined' && typeof module.exports !== 'undefined') {
+  module.exports = ExportControl;
+} else {
+  window.ExportControl = ExportControl;
+}

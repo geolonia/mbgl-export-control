@@ -12,9 +12,26 @@ This is a Mapbox GL JS plugin that allows you to download the map as `.png` file
 <script>
     var map = new mapboxgl.Map({...});
 
-    // Add the control to download
-    map.addControl(new mapboxgl.Export());
+    // Add the control to download png.
+    map.addControl(new ExportControl());
 </script>
+```
+
+Or
+
+```
+$ npm install mbgl-export
+```
+
+Then:
+
+```
+const ExportControl = require('mbgl-export')
+
+var map = new mapboxgl.Map({...});
+
+// Add the control to download png.
+map.addControl(new ExportControl());
 ```
 
 ## LICENCE
