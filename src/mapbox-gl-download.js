@@ -116,6 +116,11 @@ download.prototype.onAdd = (map) => {
   this.container.appendChild(btn)
 
   btn.addEventListener('click', () => {
+    var actualPixelRatio = window.devicePixelRatio;
+    Object.defineProperty(window, 'devicePixelRatio', {
+      get: function() {return 300 / 96}
+    });
+
     const _loading = loading()
 
     const _container = document.createElement('div')
@@ -156,6 +161,9 @@ download.prototype.onAdd = (map) => {
           _map.remove()
           _container.parentNode.removeChild(_container)
           _loading.parentNode.removeChild(_loading)
+          Object.defineProperty(window, 'devicePixelRatio', {
+            get: function() {return actualPixelRatio}
+          });
         })
       }, 2000)
     })
