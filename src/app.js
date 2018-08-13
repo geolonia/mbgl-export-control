@@ -121,7 +121,7 @@ ExportControl.prototype.onAdd = (map) => {
       get: function() {return 300 / 96}
     });
 
-    const _loading = self.loading()
+    const _loading = loading()
 
     const _container = document.createElement('div')
     document.body.appendChild(_container)
