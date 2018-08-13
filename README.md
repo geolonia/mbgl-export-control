@@ -1,4 +1,4 @@
-# Mapbox GL JS Download Plugin
+# Mapbox GL JS Export
 
 This is a plugin for Mapbox GL JS that allows you to download the map as `.png` file.
 
