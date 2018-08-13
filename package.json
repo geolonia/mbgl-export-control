@@ -1,8 +1,8 @@
 {
   "name": "mbgl-export",
-  "version": "0.2.1",
+  "version": "0.3.0",
   "description": "",
-  "main": "dist/app.js",
+  "main": "src/app.js",
   "scripts": {
     "build": "parcel build src/app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
