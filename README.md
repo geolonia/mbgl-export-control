@@ -7,13 +7,13 @@ This is a Mapbox GL JS plugin that allows you to download the map as `.png` file
 ## How to install
 
 ```
-<script type="src='path/to/dist/mapbox-gl-download.js'"></script>
+<script type="src='path/to/dist/app.js'"></script>
 
 <script>
     var map = new mapboxgl.Map({...});
 
     // Add the control to download
-    map.addControl(new mapboxgl.download());
+    map.addControl(new mapboxgl.Export());
 </script>
 ```
 
