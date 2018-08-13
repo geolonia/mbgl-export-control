@@ -115,13 +115,15 @@ ExportControl.prototype.onAdd = (map) => {
 
   this.container.appendChild(btn)
 
+  const self = this
+
   btn.addEventListener('click', () => {
     var actualPixelRatio = window.devicePixelRatio;
     Object.defineProperty(window, 'devicePixelRatio', {
       get: function() {return 300 / 96}
     });
 
-    const _loading = this.loading()
+    const _loading = self.loading()
 
     const _container = document.createElement('div')
     document.body.appendChild(_container)
