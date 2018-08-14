@@ -25,7 +25,7 @@ map.on('load', () => {
     }
   }));
   map.addControl(new ExportControl({
-    dpi: 600,
+    dpi: 300,
   }))
   map.addControl(new tileCloudControl(), 'bottom-left')
 })
