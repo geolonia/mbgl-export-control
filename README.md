@@ -10,7 +10,7 @@ https://tilecloud.github.io/mbgl-export-control/
 
 ## How to install
 
-```
+```html
 <script type="src='path/to/dist/app.js'"></script>
 
 <script>
@@ -29,7 +29,7 @@ $ npm install @tilecloud/mbgl-export-control
 
 Then:
 
-```
+```node
 const ExportControl = require('mbgl-export-control')
 
 var map = new mapboxgl.Map({...});
@@ -37,6 +37,20 @@ var map = new mapboxgl.Map({...});
 // Add the control to download png.
 map.addControl(new ExportControl());
 ```
+
+## Options
+
+The constructor of this plugin has some options.
+
+```
+new ExportControl({
+  dpi: 300,
+  attribution: "© OpenStreetMap Contributors",
+})
+```
+
+* `dpi` - Resolution for the png image. The default value is `300`.
+* `attribution` - The attribution text for map exported with png format.
 
 ## LICENCE
 
