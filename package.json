@@ -1,5 +1,5 @@
 {
-  "name": "mbgl-export",
+  "name": "@tilecloud/mbgl-export-control",
   "version": "0.3.0",
   "description": "",
   "main": "src/app.js",

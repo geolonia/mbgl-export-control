@@ -6,7 +6,7 @@ This is a Mapbox GL JS plugin that allows you to download the map as `.png` file
 
 ## Demo
 
-https://tilecloud.github.io/mbgl-export/
+https://tilecloud.github.io/mbgl-export-control/
 
 ## How to install
 
@@ -24,13 +24,13 @@ https://tilecloud.github.io/mbgl-export/
 Or
 
 ```
-$ npm install mbgl-export
+$ npm install @tilecloud/mbgl-export-control
 ```
 
 Then:
 
 ```
-const ExportControl = require('mbgl-export')
+const ExportControl = require('mbgl-export-control')
 
 var map = new mapboxgl.Map({...});
 
