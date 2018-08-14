@@ -142,6 +142,7 @@ ExportControl.prototype.onAdd = (map) => {
 
     const width = map.getContainer().offsetWidth
     const height = map.getContainer().offsetHeight
+    const bottomRight = map.unproject([width, height]).toArray()
 
     const styles = {
       visibility: "hidden",
@@ -176,7 +177,7 @@ ExportControl.prototype.onAdd = (map) => {
           type: 'Feature',
           geometry: {
             type: 'Point',
-            coordinates: map.getBounds().getSouthEast().toArray()
+            coordinates: bottomRight
           },
           properties: {
             text: ExportControlOptions.attribution
