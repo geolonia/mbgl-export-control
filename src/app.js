@@ -3,7 +3,15 @@
 require('canvas-toBlob')
 const FileSaver = require('file-saver')
 
-const ExportControl = function() {}
+const ExportControlOptions = new Object()
+
+const ExportControl = function(options) {
+  if (parseInt(options.dpi)) {
+    ExportControlOptions.dpi = options.dpi
+  } else {
+    ExportControlOptions.dpi = 300
+  }
+}
 
 ExportControl.prototype.onAdd = (map) => {
   const loading_icon = `
@@ -118,7 +126,7 @@ ExportControl.prototype.onAdd = (map) => {
   btn.addEventListener('click', () => {
     var actualPixelRatio = window.devicePixelRatio;
     Object.defineProperty(window, 'devicePixelRatio', {
-      get: function() {return 300 / 96}
+      get: function() {return ExportControlOptions.dpi / 96}
     });
 
     const _loading = loading()
