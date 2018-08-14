@@ -188,7 +188,7 @@ ExportControl.prototype.onAdd = (map) => {
         type: "geojson",
         data: geojson
       })
-      
+
       let textFont = []
       const layers = map.getStyle().layers
       for (var i = 0; i < layers.length; i++) {
@@ -233,7 +233,7 @@ ExportControl.prototype.onAdd = (map) => {
             get: function() {return actualPixelRatio}
           });
         })
-      }, 5000)
+      }, 3000)
     })
   })
 
