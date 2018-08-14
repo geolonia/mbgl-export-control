@@ -42,7 +42,7 @@ map.addControl(new ExportControl());
 
 The constructor of this plugin has some options.
 
-```
+```node
 new ExportControl({
   dpi: 300,
   attribution: "© OpenStreetMap Contributors",
