@@ -1,4 +1,4 @@
-import tileCloudControl from 'mapbox-gl-tilecloud-control'
+import tileCloudControl from '@tilecloud/mbgl-tilecloud-control'
 import ExportControl from '../../src/app'
 
 const map = new mapboxgl.Map({

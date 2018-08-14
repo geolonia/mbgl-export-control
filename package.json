@@ -11,6 +11,7 @@
   "author": "Takayuki Miyauchi",
   "license": "MIT",
   "devDependencies": {
+    "@tilecloud/mbgl-tilecloud-control": "git+https://github.com/tilecloud/mbgl-tilecloud-control.git",
     "http-server": "^0.11.1",
     "mapbox-gl-tilecloud-control": "git+https://github.com/tilecloud/mbgl-tilecloud-control.git",
     "parcel": "^1.9.7"
