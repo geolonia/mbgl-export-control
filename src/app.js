@@ -11,6 +11,12 @@ const ExportControl = function(options) {
   } else {
     ExportControlOptions.dpi = 300
   }
+
+  if (options.attribution) {
+    ExportControlOptions.attribution = options.attribution
+  } else {
+    ExportControlOptions.attribution = "© OpenStreetMap Contributors"
+  }
 }
 
 ExportControl.prototype.onAdd = (map) => {
@@ -162,7 +168,61 @@ ExportControl.prototype.onAdd = (map) => {
       interactive: false,
       attributionControl: false,
     })
+
     _map.once('load', () => {
+      const geojson = {
+        type: 'FeatureCollection',
+        features: [{
+          type: 'Feature',
+          geometry: {
+            type: 'Point',
+            coordinates: map.getBounds().getSouthEast().toArray()
+          },
+          properties: {
+            text: ExportControlOptions.attribution
+          }
+        }]
+      };
+    
+      _map.addSource("attribution-for-image", {
+        type: "geojson",
+        data: geojson
+      })
+
+      let textFont = []
+      const layers = map.getStyle().layers
+      for (var i = 0; i < layers.length; i++) {
+        try {
+          const fonts = map.getLayoutProperty(layers[i].id, 'text-font')
+          if (fonts && fonts.length) {
+            textFont = fonts
+            break;
+          }
+        } catch (e) {
+          // Nothing to do.
+        }
+      }
+
+      _map.addLayer({
+        "id": "markers",
+        "type": "symbol",
+        "source": "attribution-for-image",
+        "paint": {
+          "text-color": "#000000",
+          "text-halo-color": "rgba(255, 255, 255, 1)",
+          "text-halo-width": 2,
+        },
+        "layout": {
+          "text-field": "{text}",
+          "text-font": textFont,
+          "text-size": 18,
+          "text-anchor": "bottom-right",
+          "text-max-width": 28,
+          "text-offset": [-0.5, -0.5],
+          "text-allow-overlap": true,
+        }
+      });
+
       setTimeout(() => {
         _map.getCanvas().toBlob((blob) => {
           FileSaver.saveAs(blob, _map.getCenter().toArray().join('-') + '.png')
