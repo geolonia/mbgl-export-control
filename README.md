@@ -4,6 +4,10 @@ This is a Mapbox GL JS plugin that allows you to download the map as `.png` file
 
 ![](https://www.evernote.com/l/ABW7C9vzeu9FsrMfu900lhOknLVdcP-vcCQB/image.png)
 
+## Demo
+
+https://tilecloud.github.io/mbgl-export/
+
 ## How to install
 
 ```
