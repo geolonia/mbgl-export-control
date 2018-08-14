@@ -1,3 +1,4 @@
+import tileCloudControl from 'mapbox-gl-tilecloud-control'
 import ExportControl from '../../src/app'
 
 const map = new mapboxgl.Map({
@@ -9,3 +10,4 @@ const map = new mapboxgl.Map({
 map.addControl(new mapboxgl.NavigationControl());
 map.addControl(new mapboxgl.GeolocateControl());
 map.addControl(new ExportControl());
+map.addControl(new tileCloudControl(), 'bottom-left');
