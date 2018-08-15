@@ -1,4 +1,5 @@
 import tileCloudControl from '@tilecloud/mbgl-tilecloud-control'
+import ForkMeConntrol from '@tilecloud/mbgl-fork-me-control'
 import MapboxDraw from '@mapbox/mapbox-gl-draw'
 import ExportControl from '../../src/app'
 
@@ -24,8 +25,12 @@ map.on('load', () => {
       uncombine_features: false,
     }
   }));
+  map.addControl(new tileCloudControl())
+  map.addControl(new ForkMeConntrol({
+    url: 'https://github.com/tilecloud/mbgl-export-control',
+  }));
+
   map.addControl(new ExportControl({
     dpi: 600,
   }))
-  map.addControl(new tileCloudControl())
 })
