@@ -4,8 +4,8 @@
   "description": "",
   "main": "src/app.js",
   "scripts": {
-    "start": "npm run build && http-server $(pwd)/docs -o",
-    "build": "parcel build src/app.js && parcel build -d docs/dist docs/src/app.js --no-cache",
+    "start": "npm test && npm run build && http-server $(pwd)/docs -o",
+    "build": "npm test && parcel build src/app.js && parcel build -d docs/dist docs/src/app.js --no-cache",
     "test": "eslint \"src/**/*.js\""
   },
   "author": "Takayuki Miyauchi",
