@@ -255,8 +255,4 @@ ExportControl.prototype.onRemove = () => {
   this.container.parentNode.removeChild(this.container)
 }
 
-if (typeof module !== 'undefined' && typeof module.exports !== 'undefined') {
-  module.exports = ExportControl;
-} else {
-  window.ExportControl = ExportControl;
-}
+module.exports = ExportControl;

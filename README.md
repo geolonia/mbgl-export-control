@@ -12,19 +12,6 @@ https://tilecloud.github.io/mbgl-export-control/
 
 ## How to install
 
-```html
-<script type="src='path/to/dist/app.js'"></script>
-
-<script>
-    var map = new mapboxgl.Map({...});
-
-    // Add the control to download png.
-    map.addControl(new ExportControl());
-</script>
-```
-
-Or
-
 ```
 $ npm install @tilecloud/mbgl-export-control
 ```
