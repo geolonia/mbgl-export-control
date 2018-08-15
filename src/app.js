@@ -17,6 +17,12 @@ const ExportControl = function(options) {
   } else {
     ExportControlOptions.attribution = "© OpenStreetMap Contributors"
   }
+
+  if (options.textFont) {
+    ExportControlOptions.textFont = options.textFont
+  } else {
+    ExportControlOptions.textFont = []
+  }
 }
 
 ExportControl.prototype.onAdd = (map) => {
@@ -88,7 +94,7 @@ ExportControl.prototype.onAdd = (map) => {
       width: "100%",
       backgroundColor: "rgba(0, 0, 0, 0.6)",
       zIndex: 9999,
-    }  
+    }
 
     for (const style in styles) {
       container.style[style] = styles[style]
@@ -107,7 +113,7 @@ ExportControl.prototype.onAdd = (map) => {
       margin: "auto",
       width: "120px",
       height: "120px",
-    }  
+    }
 
     for (const style in icon_styles) {
       icon.style[style] = icon_styles[style]
@@ -184,26 +190,30 @@ ExportControl.prototype.onAdd = (map) => {
           }
         }]
       };
-    
+
       _map.addSource("attribution-for-image", {
         type: "geojson",
         data: geojson
       })
 
       let textFont = []
-      const layers = map.getStyle().layers
-      for (let i = 0; i < layers.length; i++) {
-        try {
-          const fonts = map.getLayoutProperty(layers[i].id, 'text-font')
-          if (fonts && fonts.length) {
-            textFont = fonts
-            break;
+      if (ExportControlOptions.textFont) {
+        textFont = ExportControlOptions.textFont
+      } else {
+        const layers = map.getStyle().layers
+        for (let i = 0; i < layers.length; i++) {
+          try {
+            const fonts = map.getLayoutProperty(layers[i].id, 'text-font')
+            if (fonts && fonts.length) {
+              textFont = fonts
+              break;
+            }
+          } catch (e) {
+            // Nothing to do.
           }
-        } catch (e) {
-          // Nothing to do.
         }
       }
-  
+
       _map.addLayer({
         "id": "markers",
         "type": "symbol",

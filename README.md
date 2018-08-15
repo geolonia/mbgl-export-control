@@ -51,8 +51,9 @@ new ExportControl({
 })
 ```
 
-* `dpi` - Resolution for the png image. The default value is `300`.
-* `attribution` - The attribution text for map exported with png format.
+* `dpi` - Optional. Resolution for the png image. The default value is `300`.
+* `attribution` - Optional. The attribution text for map exported with png format.
+* `textFont` - Optional. An array of text fonts. `["Noto Sans Italic", "..."]`. If it is empty, this plugin try to detect font from JSON for the style of the map.
 
 ## LICENCE
 
