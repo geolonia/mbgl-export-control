@@ -90,7 +90,7 @@ ExportControl.prototype.onAdd = (map) => {
       zIndex: 9999,
     }  
 
-    for (var style in styles) {
+    for (const style in styles) {
       container.style[style] = styles[style]
     }
 
@@ -109,7 +109,7 @@ ExportControl.prototype.onAdd = (map) => {
       height: "120px",
     }  
 
-    for (var style in icon_styles) {
+    for (const style in icon_styles) {
       icon.style[style] = icon_styles[style]
     }
 
@@ -130,9 +130,9 @@ ExportControl.prototype.onAdd = (map) => {
   this.container.appendChild(btn)
 
   btn.addEventListener('click', () => {
-    var actualPixelRatio = window.devicePixelRatio;
+    const actualPixelRatio = window.devicePixelRatio;
     Object.defineProperty(window, 'devicePixelRatio', {
-      get: function() {return ExportControlOptions.dpi / 96}
+      get: () => ExportControlOptions.dpi / 96
     });
 
     const _loading = loading()
@@ -149,11 +149,11 @@ ExportControl.prototype.onAdd = (map) => {
       position: "absolute",
       top: 0,
       bottom: 0,
-      width: width + 'px',
-      height: height + 'px',
+      width: `${width}px`,
+      height: `${height}px`,
     }
 
-    for (var style in styles) {
+    for (const style in styles) {
       _container.style[style] = styles[style]
     }
 
@@ -192,7 +192,7 @@ ExportControl.prototype.onAdd = (map) => {
 
       let textFont = []
       const layers = map.getStyle().layers
-      for (var i = 0; i < layers.length; i++) {
+      for (let i = 0; i < layers.length; i++) {
         try {
           const fonts = map.getLayoutProperty(layers[i].id, 'text-font')
           if (fonts && fonts.length) {
@@ -226,12 +226,12 @@ ExportControl.prototype.onAdd = (map) => {
 
       setTimeout(() => {
         _map.getCanvas().toBlob((blob) => {
-          FileSaver.saveAs(blob, _map.getCenter().toArray().join('-') + '.png')
+          FileSaver.saveAs(blob, `${_map.getCenter().toArray().join('-')}.png`)
           _map.remove()
           _container.parentNode.removeChild(_container)
           _loading.parentNode.removeChild(_loading)
           Object.defineProperty(window, 'devicePixelRatio', {
-            get: function() {return actualPixelRatio}
+            get: () => actualPixelRatio
           });
         })
       }, 3000)
