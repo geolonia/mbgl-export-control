@@ -22,7 +22,7 @@ Then:
 ```node
 const ExportControl = require('mbgl-export-control')
 
-var map = new mapboxgl.Map({...});
+const map = new mapboxgl.Map({...});
 
 // Add the control to download png.
 map.addControl(new ExportControl());
