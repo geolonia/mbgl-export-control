@@ -1,19 +1,20 @@
 {
   "name": "@tilecloud/mbgl-export-control",
-  "version": "0.3.2",
+  "version": "0.3.3",
   "description": "",
   "main": "src/app.js",
   "scripts": {
-    "start": "npm test && npm run build && http-server $(pwd)/docs -o",
-    "build": "npm test && parcel build src/app.js && parcel build -d docs/dist docs/src/app.js --no-cache",
+    "start": "npm run build && cd docs && http-server -o",
+    "watch": "parcel -d ${TMPDIR} example/index.html --open",
+    "build": "rm -fr docs && parcel build -d docs/ example/index.html --public-url '.' && touch docs/.nojekyll",
     "test": "eslint \"src/**/*.js\""
   },
   "author": "Takayuki Miyauchi",
   "license": "MIT",
   "devDependencies": {
     "@mapbox/mapbox-gl-draw": "^1.0.9",
-    "@tilecloud/mbgl-fork-me-control": "^0.1.0",
-    "@tilecloud/mbgl-tilecloud-control": "^0.2.0",
+    "@tilecloud/mbgl-fork-me-control": "^0.2.0",
+    "@tilecloud/mbgl-tilecloud-control": "*",
     "eslint": "^5.3.0",
     "http-server": "^0.11.1",
     "parcel": "^1.9.7"

@@ -197,7 +197,7 @@ ExportControl.prototype.onAdd = (map) => {
       })
 
       let textFont = []
-      if (ExportControlOptions.textFont) {
+      if (ExportControlOptions.textFont.length) {
         textFont = ExportControlOptions.textFont
       } else {
         const layers = map.getStyle().layers
