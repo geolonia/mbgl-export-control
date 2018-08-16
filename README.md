@@ -1,6 +1,7 @@
 # Mapbox GL JS Export Control
 
 [![Build Status](https://travis-ci.org/tilecloud/mbgl-export-control.svg?branch=master)](https://travis-ci.org/tilecloud/mbgl-export-control)
+[![npm version](https://badge.fury.io/js/%40tilecloud%2Fmbgl-export-control.svg)](https://badge.fury.io/js/%40tilecloud%2Fmbgl-export-control)
 
 This is a Mapbox GL JS plugin that allows you to download the map as `.png` file.
 
