@@ -12,9 +12,14 @@ const map = new mapboxgl.Map({
   hash: true
 });
 
+map.addControl(new mapboxgl.NavigationControl())
+map.addControl(new mapboxgl.GeolocateControl())
+map.addControl(new tileCloudControl())
+map.addControl(new ForkMeConntrol({
+  url: 'https://github.com/tilecloud/mbgl-export-control',
+}));
+
 map.on('load', () => {
-  map.addControl(new mapboxgl.NavigationControl())
-  map.addControl(new mapboxgl.GeolocateControl())
   map.addControl(new MapboxDraw({
     controls: {
       point: true,
@@ -24,10 +29,6 @@ map.on('load', () => {
       combine_features: false,
       uncombine_features: false,
     }
-  }));
-  map.addControl(new tileCloudControl())
-  map.addControl(new ForkMeConntrol({
-    url: 'https://github.com/tilecloud/mbgl-export-control',
   }));
 
   map.addControl(new ExportControl({
