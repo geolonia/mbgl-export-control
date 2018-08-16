@@ -33,5 +33,6 @@ map.on('load', () => {
 
   map.addControl(new ExportControl({
     dpi: 300,
+    textFont: ['noto-sans-cjk-jp-demi-light']
   }))
 })
