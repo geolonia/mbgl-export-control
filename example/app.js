@@ -31,6 +31,6 @@ map.on('load', () => {
   }));
 
   map.addControl(new ExportControl({
-    dpi: 600,
+    dpi: 300,
   }))
 })
