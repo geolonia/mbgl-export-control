@@ -7,12 +7,11 @@ import icons from './icons'
 class ExportControl {
 
   constructor(options) {
-    this.options = Object.assign(
-      {
+    this.options = Object.assign({
         dpi: 300,
         attribution: "© OpenStreetMap Contributors",
         textFont: [],
-      }
+      }, options
     )
   }
 
