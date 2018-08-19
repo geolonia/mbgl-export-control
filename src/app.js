@@ -6,7 +6,7 @@ import icons from './icons'
 
 class ExportControl {
 
-  constructor(options) {
+  constructor(options = {}) {
     this.options = Object.assign({
         dpi: 300,
         attribution: "© OpenStreetMap Contributors",
