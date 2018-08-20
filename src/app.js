@@ -1,6 +1,5 @@
 "use strict"
 
-import 'babel-polyfill'
 import 'canvas-toBlob'
 import FileSaver from 'file-saver'
 import icons from './icons'
