@@ -13,13 +13,14 @@
   "license": "MIT",
   "devDependencies": {
     "@mapbox/mapbox-gl-draw": "^1.0.9",
-    "@tilecloud/mbgl-fork-me-control": "^0.2.0",
-    "@tilecloud/mbgl-tilecloud-control": "^0.3.0",
+    "@tilecloud/mbgl-fork-me-control": "*",
+    "@tilecloud/mbgl-tilecloud-control": "*",
     "eslint": "^5.4.0",
     "http-server": "^0.11.1",
     "parcel": "^1.9.7"
   },
   "dependencies": {
+    "babel-polyfill": "^6.26.0",
     "canvas-toBlob": "^1.0.0",
     "file-saver": "^1.3.8"
   }
