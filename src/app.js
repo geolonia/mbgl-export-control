@@ -1,5 +1,3 @@
-"use strict"
-
 import 'canvas-toBlob'
 import FileSaver from 'file-saver'
 import icons from './icons'
