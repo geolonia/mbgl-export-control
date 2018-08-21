@@ -20,7 +20,8 @@ $ npm install @tilecloud/mbgl-export-control
 Then:
 
 ```node
-const ExportControl = require('mbgl-export-control')
+import 'babel-polyfill' // For ie11
+import ExportControl from 'mbgl-export-control'
 
 const map = new mapboxgl.Map({...});
 
