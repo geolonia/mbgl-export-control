@@ -49,6 +49,11 @@ class ExportControl {
         height: `${height}px`,
       })
 
+      let fontFamily = []
+      if (map.style.glyphManager && map.style.glyphManager.localIdeographFontFamily) {
+        fontFamily = map.style.glyphManager.localIdeographFontFamily
+      }
+
       const _map = new mapboxgl.Map({
         container: _container,
         center: map.getCenter(),
@@ -56,6 +61,7 @@ class ExportControl {
         bearing: map.getBearing(),
         pitch: map.getPitch(),
         style: map.getStyle(),
+        localIdeographFontFamily: fontFamily,
         hash: false,
         preserveDrawingBuffer: true,
         interactive: false,

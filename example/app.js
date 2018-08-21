@@ -11,7 +11,8 @@ const map = new mapboxgl.Map({
   container: 'map',
   style: 'https://tilecloud.github.io/tiny-tileserver/style.json',
   attributionControl: true,
-  hash: true
+  hash: true,
+  localIdeographFontFamily: ['sans-serif']
 });
 
 map.addControl(new mapboxgl.NavigationControl())
