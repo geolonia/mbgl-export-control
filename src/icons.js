@@ -1,5 +1,7 @@
-exports.loading = `
-  <svg style="width: 100%; height: 100%;" width="45" height="45" viewBox="0 0 45 45" xmlns="http://www.w3.org/2000/svg" stroke="#fff">
+const Icons = {}
+
+Icons.loading = `
+  <svg style="width: 100%; height: 100%;" width="45" height="45" viewBox="0 0 45 45" stroke="#fff">
     <g fill="none" fill-rule="evenodd" transform="translate(1 1)" stroke-width="2">
       <circle cx="22" cy="22" r="6" stroke-opacity="0">
         <animate attributeName="r"
@@ -43,7 +45,7 @@ exports.loading = `
   `
 
 
-exports.download = `
+Icons.download = `
   <svg height="19px" viewBox="0 0 14 19" width="14px" xmlns="http://www.w3.org/2000/svg">
     <title/><desc/><defs/>
     <g fill="none" fill-rule="evenodd" id="Page-1" stroke="none" stroke-width="1">
@@ -55,3 +57,5 @@ exports.download = `
     </g>
   </svg>
   `
+
+export default Icons

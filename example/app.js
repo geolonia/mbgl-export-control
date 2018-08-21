@@ -1,5 +1,7 @@
 import MapboxDraw from '@mapbox/mapbox-gl-draw'
-import ExportControl from '../src/app'
+import ForkMeConntrol from '@tilecloud/mbgl-fork-me-control'
+import TileCloudControl from '@tilecloud/mbgl-tilecloud-control'
+import ExportControl from '../dist/mbgl-export-control'
 
 import "../node_modules/@mapbox/mapbox-gl-draw/dist/mapbox-gl-draw.css"
 
@@ -12,6 +14,11 @@ const map = new mapboxgl.Map({
 
 map.addControl(new mapboxgl.NavigationControl())
 map.addControl(new mapboxgl.GeolocateControl())
+
+map.addControl(new ForkMeConntrol({
+  url: 'https://github.com/tilecloud/mbgl-export-control',
+}));
+map.addControl(new TileCloudControl());
 
 map.on('load', () => {
   map.addControl(new MapboxDraw({

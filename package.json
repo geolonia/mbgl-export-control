@@ -4,19 +4,22 @@
   "description": "",
   "main": "src/app.js",
   "scripts": {
-    "start": "npm run build && cd docs && http-server -o",
+    "start": "cd docs && http-server -o",
     "watch": "parcel -d ${TMPDIR} example/index.html --open",
-    "build": "rm -fr docs && parcel build -d docs/ example/index.html --public-url '.' && touch docs/.nojekyll",
+    "build": "npm run build:lib && npm run build:site",
+    "build:lib": "npm test && microbundle build src/index.js -o dist -f cjs",
+    "build:site": "rm -fr docs && parcel build -d docs example/index.html --public-url '.' && touch docs/.nojekyll",
     "test": "eslint \"src/**/*.js\""
   },
   "author": "Takayuki Miyauchi",
   "license": "MIT",
   "devDependencies": {
     "@mapbox/mapbox-gl-draw": "^1.0.9",
-    "@tilecloud/mbgl-fork-me-control": "^0.2.3",
-    "@tilecloud/mbgl-tilecloud-control": "^0.3.1",
+    "@tilecloud/mbgl-fork-me-control": "^0.2.4",
+    "@tilecloud/mbgl-tilecloud-control": "^0.3.4",
     "eslint": "^5.4.0",
     "http-server": "^0.11.1",
+    "microbundle": "^0.6.0",
     "parcel": "^1.9.7"
   },
   "dependencies": {
