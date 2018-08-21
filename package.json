@@ -1,6 +1,6 @@
 {
   "name": "@tilecloud/mbgl-export-control",
-  "version": "0.3.7",
+  "version": "0.3.8",
   "description": "",
   "main": "dist/mbgl-export-control.js",
   "scripts": {
