@@ -1,4 +1,4 @@
-# Mapbox GL JS Export Control
+# @tilecloud/mbgl-export-control
 
 [![Build Status](https://travis-ci.org/tilecloud/mbgl-export-control.svg?branch=master)](https://travis-ci.org/tilecloud/mbgl-export-control)
 [![npm version](https://badge.fury.io/js/%40tilecloud%2Fmbgl-export-control.svg)](https://badge.fury.io/js/%40tilecloud%2Fmbgl-export-control)
