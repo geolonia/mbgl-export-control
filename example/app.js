@@ -3,7 +3,7 @@ import 'babel-polyfill'
 import MapboxDraw from '@mapbox/mapbox-gl-draw'
 import ForkMeConntrol from '@tilecloud/mbgl-fork-me-control'
 import TileCloudControl from '@tilecloud/mbgl-tilecloud-control'
-import ExportControl from '../dist/mbgl-export-control'
+import ExportControl from '../src'
 
 import "../node_modules/@mapbox/mapbox-gl-draw/dist/mapbox-gl-draw.css"
 
