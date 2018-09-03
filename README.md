@@ -21,7 +21,7 @@ Then:
 
 ```node
 import 'babel-polyfill' // For ie11
-import ExportControl from 'mbgl-export-control'
+import ExportControl from '@tilecloud/mbgl-export-control'
 
 const map = new mapboxgl.Map({...});
 
