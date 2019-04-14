@@ -56,6 +56,8 @@ class ExportControl {
 
       let mbgl;
       if ('undefined' !== typeof tilecloud) {
+        /* global tilecloud:true */
+        /* eslint no-undef: "error" */
         mbgl = tilecloud.mapboxgl.Map
       } else {
         mbgl = mapboxgl.Map
