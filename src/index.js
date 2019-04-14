@@ -54,7 +54,14 @@ class ExportControl {
         fontFamily = map.style.glyphManager.localIdeographFontFamily
       }
 
-      const _map = new mapboxgl.Map({
+      let mbgl;
+      if ('undefined' === typeof mapboxgl) {
+        mbgl = tilecloud.mapboxgl.Map
+      } else {
+        mbgl = mapboxgl.Map
+      }
+
+      const _map = new mbgl({
         container: _container,
         center: map.getCenter(),
         zoom: map.getZoom(),

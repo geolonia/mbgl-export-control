@@ -2,13 +2,11 @@
   "name": "@tilecloud/mbgl-export-control",
   "version": "0.3.10",
   "description": "",
-  "main": "dist/mbgl-export-control.js",
+  "main": "src/index.js",
   "scripts": {
-    "start": "cd docs && http-server -o",
-    "watch": "parcel -d ${TMPDIR} example/index.html --open",
-    "build": "npm run build:lib && npm run build:site",
-    "build:lib": "npm test && microbundle build src/index.js -o dist -f cjs",
-    "build:site": "rm -fr docs && parcel build -d docs example/index.html --public-url '.' && touch docs/.nojekyll",
+    "start": "parcel -d ${TMPDIR} example/index.html --open",
+    "build": "npm run build:docs",
+    "build:docs": "rm -fr docs && parcel build -d docs example/index.html --public-url '.' && touch docs/.nojekyll",
     "test": "eslint \"src/**/*.js\""
   },
   "author": "Takayuki Miyauchi",
