@@ -55,7 +55,7 @@ class ExportControl {
       }
 
       let mbgl;
-      if ('undefined' === typeof mapboxgl) {
+      if ('undefined' !== typeof tilecloud) {
         mbgl = tilecloud.mapboxgl.Map
       } else {
         mbgl = mapboxgl.Map
