@@ -9,7 +9,7 @@ This is a Mapbox GL JS plugin that allows you to download the map as `.png` file
 
 ## Demo
 
-https://tilecloud.github.io/mbgl-export-control/
+https://geolonia.github.io/mbgl-export-control/
 
 ## How to install
 
