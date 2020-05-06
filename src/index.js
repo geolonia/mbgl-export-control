@@ -56,7 +56,6 @@ class ExportControl {
 
       let mbgl;
       if ('undefined' !== typeof window.geolonia) {
-        /* global geolonia:true */
         /* eslint no-undef: "error" */
         mbgl = window.geolonia.Map
       } else {
