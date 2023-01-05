@@ -1,7 +1,7 @@
 import 'canvas-toBlob'
 import FileSaver from 'file-saver'
 import { loading, download } from './icons'
-import type { Map } from '@geolonia/embed'
+import type { Map as GeoloniaMap } from '@geolonia/embed'
 
 type Options = {
   dpi: number,
@@ -24,7 +24,7 @@ class ExportControl {
     this.options = { ...defaultOptions, ...options }
   }
 
-  onAdd(map: Map) {
+  onAdd(map: GeoloniaMap) {
     this.container = document.createElement('div')
     this.container.className = 'mapboxgl-ctrl mapboxgl-ctrl-group maplibregl-ctrl maplibregl-ctrl-group'
 
@@ -36,7 +36,7 @@ class ExportControl {
 
     this.container.appendChild(btn)
 
-    btn.addEventListener('click', () => {
+    btn.addEventListener('click', async () => {
       const actualPixelRatio = window.devicePixelRatio;
       Object.defineProperty(window, 'devicePixelRatio', {
         get: () => this.options.dpi / 96
@@ -60,28 +60,28 @@ class ExportControl {
         height: `${height}px`,
       })
 
-      let fontFamily: string[] | string = []
+      let fontFamily = 'Noto Sans Regular'
       if (map.style.glyphManager && map.style.glyphManager.localIdeographFontFamily) {
         fontFamily = map.style.glyphManager.localIdeographFontFamily
       }
 
-      let mbgl: typeof Map;
+      let Map: typeof GeoloniaMap;
       if ('undefined' !== typeof window.geolonia) {
-        /* eslint no-undef: "error" */
-        mbgl = window.geolonia.Map
+        Map = window.geolonia.Map
       } else {
         // @ts-ignore
-        mbgl = mapboxgl.Map
+        Map = mapboxgl.Map
       }
 
-      const _map = new mbgl({
+      const copiedStyle = JSON.parse(JSON.stringify(map.getStyle()))
+
+      const _map = new Map({
         container: _container,
         center: map.getCenter(),
         zoom: map.getZoom(),
         bearing: map.getBearing(),
         pitch: map.getPitch(),
-        style: map.getStyle(),
-        // @ts-ignore
+        style: copiedStyle,
         localIdeographFontFamily: fontFamily,
         hash: false,
         preserveDrawingBuffer: true,
@@ -161,6 +161,8 @@ class ExportControl {
         })
         }, 3000)
       })
+
+
     })
 
     return this.container;
