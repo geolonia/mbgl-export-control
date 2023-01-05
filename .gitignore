@@ -75,4 +75,7 @@ typings/
 # Serverless directories
 .serverless
 
-lib/*.js
+dist/*
+src/*.js
+docs/*
+!docs/index.html
