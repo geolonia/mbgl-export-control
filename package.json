@@ -6,13 +6,15 @@
   "scripts": {
     "build": "tsc",
     "build:docs": "webpack --mode production && cp ./dist/* ./docs/",
-    "test": "eslint \"src/**/*.js\""
+    "test": "eslint \"src/**/*.ts\""
   },
   "author": "Takayuki Miyauchi",
   "license": "MIT",
   "devDependencies": {
     "@geolonia/embed": "^3.1.1",
     "@types/file-saver": "^2.0.5",
+    "@typescript-eslint/eslint-plugin": "^5.48.0",
+    "@typescript-eslint/parser": "^5.48.0",
     "eslint": "^8.31.0",
     "ts-loader": "^9.4.2",
     "typescript": "^4.9.4",

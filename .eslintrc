@@ -1,5 +1,11 @@
 {
-    "extends": "eslint:recommended",
+    "extends": [
+      "eslint:recommended",
+      "plugin:@typescript-eslint/recommended"
+    ],
+    "plugins": ["@typescript-eslint"],
+    "parser": "@typescript-eslint/parser",
+    "root": true,
     "env": {
         "es6": true,
         "node": true
@@ -32,6 +38,7 @@
         "rest-spread-spacing": "error",
         "template-curly-spacing": "error",
         "yield-star-spacing": "error",
-        "no-console": 1
+        "no-console": 1,
+        "@typescript-eslint/ban-ts-comment": "warn"
     }
 }
