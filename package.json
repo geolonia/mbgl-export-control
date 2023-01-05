@@ -1,6 +1,6 @@
 {
   "name": "@geolonia/mbgl-export-control",
-  "version": "0.4.3",
+  "version": "0.4.4",
   "description": "",
   "main": "src/index.js",
   "scripts": {
