@@ -18,4 +18,4 @@ deploy:
   on:
     branch: master
     tags: true
-  repo: tilecloud/mbgl-export-control
+  repo: geolonia/mbgl-export-control

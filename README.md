@@ -1,7 +1,7 @@
-# @tilecloud/mbgl-export-control
+# @geolonia/mbgl-export-control
 
-[![Build Status](https://travis-ci.org/tilecloud/mbgl-export-control.svg?branch=master)](https://travis-ci.org/tilecloud/mbgl-export-control)
-[![npm version](https://badge.fury.io/js/%40tilecloud%2Fmbgl-export-control.svg)](https://badge.fury.io/js/%40tilecloud%2Fmbgl-export-control)
+[![Build Status](https://travis-ci.org/geolonia/mbgl-export-control.svg?branch=master)](https://travis-ci.org/geolonia/mbgl-export-control)
+[![npm version](https://badge.fury.io/js/%40geolonia%2Fmbgl-export-control.svg)](https://badge.fury.io/js/%40tilecloud%2Fmbgl-export-control)
 
 This is a Mapbox GL JS plugin that allows you to download the map as `.png` file.
 
@@ -14,14 +14,14 @@ https://geolonia.github.io/mbgl-export-control/
 ## How to install
 
 ```
-$ npm install @tilecloud/mbgl-export-control
+$ npm install @geolonia/mbgl-export-control
 ```
 
 Then:
 
 ```node
 import 'babel-polyfill' // For ie11
-import ExportControl from '@tilecloud/mbgl-export-control'
+import ExportControl from '@geolonia/mbgl-export-control'
 
 const map = new mapboxgl.Map({...});
 

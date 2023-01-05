@@ -1,25 +1,22 @@
 {
-  "name": "@tilecloud/mbgl-export-control",
+  "name": "@geolonia/mbgl-export-control",
   "version": "0.4.2",
   "description": "",
-  "main": "src/index.js",
+  "main": "lib/index.js",
   "scripts": {
-    "start": "parcel -d ${TMPDIR} example/index.html --open",
-    "build": "npm run build:docs",
-    "build:docs": "rm -fr docs && parcel build -d docs example/index.html --public-url '.' && touch docs/.nojekyll",
+    "build": "tsc",
+    "build:docs": "webpack --mode production && mv ./dist/* ./docs/",
     "test": "eslint \"src/**/*.js\""
   },
   "author": "Takayuki Miyauchi",
   "license": "MIT",
   "devDependencies": {
-    "@mapbox/mapbox-gl-draw": "^1.0.9",
-    "@tilecloud/mbgl-fork-me-control": "^0.2.4",
-    "@tilecloud/mbgl-tilecloud-control": "^0.3.4",
-    "babel-polyfill": "^6.26.0",
-    "eslint": "^5.4.0",
-    "http-server": "^0.11.1",
-    "microbundle": "^0.6.0",
-    "parcel": "^1.12.3"
+    "@geolonia/embed": "^3.1.1",
+    "@types/file-saver": "^2.0.5",
+    "eslint": "^8.31.0",
+    "typescript": "^4.9.4",
+    "webpack": "^5.75.0",
+    "webpack-cli": "^5.0.1"
   },
   "dependencies": {
     "canvas-toBlob": "^1.0.0",
