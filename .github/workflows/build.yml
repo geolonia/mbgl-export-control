@@ -30,6 +30,14 @@ jobs:
       - run: yarn install
       - run: yarn test
       - run: yarn build
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v1
+        with:
+          # Upload entire repository
+          path: 'docs'
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v1
       - name: save the built
         uses: actions/upload-artifact@v3
         if: "!failure()"
@@ -38,7 +46,6 @@ jobs:
           name: the-built
           path: |
             dist/
-            docs/
             src/
 
   publish:
